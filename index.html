@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Covid-19 Visualisations</title>
+  <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+
+  <!-- Import pure.css -->
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css"
+    integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
+  <!-- CSS file -->
+  <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
+
+
+</head>
+
+<body>
+    <div class="header">
+        <div >
+          <center>
+              <h1>Covid-19 Visualisations</h1>
+              <p>This visualisation is to observe the impact of covid-19 in population.</p>
+          </center>
+        </div>
+        
+        <center>
+        <div id = "vis3" class="vis-container"></div>
+        <p>The graph above shows the active cases around the whole world in the end of the year 2021.
+          <bold>United States of America</bold> remains as the top country which has the highest number of covid-19 cases over the year 2021
+          which is due to thier failure to apply the principles of metacognition.
+        </p>
+        </center>
+          
+      <br>
+
+
+        <div class="pure-g">
+            <div class="pure-u-1-2">
+              <div class="description description-left">
+                <h2>Death Cases Overworld Due to Covid-19 in 2021</h2>
+                <p>From the graph, we can observe that the death cases increase gradually
+                    along the year, <br>
+                    <as>India</as>, <af>Africa</af>, <o>Australia</o>, <na>America</na>, <sa>Brazil</sa> and <e>Russia</e>
+                    have the highest death cases in <br>
+                    </nr><as>Asia</as>, <af>Africa</af>, <o>Oceania</o>, <na>North America</na>, <sa>South America</sa> and <e>Europe</e> respectively
+                </p>
+              </div><br><br>
+              <div id="vis1" class="vis-container"></div>
+            </div>
+            <div class="pure-u-1-2">
+              <h2>Relation of Vaccination and Death Cases</h2>
+              <p>The lines in the graph shows that the vaccine does help in reducing the death cases but only in certain time, which
+                  means that even though one have taken vaccine, he or she should still beware and should <bold>wear a mask</bold> in public and <bold>sanitise hands</bold> oftenly.
+                  The <vaccination>yellow</vaccination> line is the <vaccination>total vaccinations (per thousand)</vaccination> line graph whereas the <deaths>blue</deaths> line is the 
+                  <deaths>total deaths</deaths> line graph.
+              </p>
+              <div id="vis2" class="vis-container"></div>
+            </div>
+            
+        </div>
+
+        <div>
+              <h2>Cumulative Number of Vaccine Taken Overworld</h2>
+              <p>
+                <bold>excluding China</bold><br><br>
+                The <vaccination>Moderna Vaccine</vaccination> remains as the top used vaccine as most of the USA citizen prefers to 
+                use it and the dataset does not include the data of China which uses the <sinovac>Sinovac Vaccine</sinovac> which 
+                seems to be very less compared to the other vaccine type in the dataset.
+
+              </p>
+            </div>
+
+            <div id="vis4" class="vis-container"></div>
+          </div>
+      </div>
+    </div>
+
+
+</div>
+
+    <center>
+    <ref>
+        <notimportant>Reference :  <a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public/when-and-how-to-use-masks" target="_blank">WHO</a>, <a href="https://www.gainesville.com/story/opinion/2021/10/26/frederick-s-southwick-why-u-s-leads-world-covid-19-deaths/6124437001/" target="_blank">Gainesville</a></notimportant>
+    </ref>
+</center>
+
+    <script type="text/javascript">
+        var specVis1 = "./js/CovidScatterPlot.json";
+        var specVis2 = "./js/CovidLine.json";
+        var specVis3 = "./js/CovidMap.json"
+        var specVis4 = "./js/CovidBar.json"
+    
+        vegaEmbed('#vis1', specVis1, { "actions": false });
+    
+        vegaEmbed('#vis2', specVis2, { "actions": false }).then(function (result) {
+          // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        }).catch(console.error);
+
+        vegaEmbed('#vis3', specVis3, { "actions": false }).then(function (result) {
+          // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        }).catch(console.error);
+
+        vegaEmbed('#vis4', specVis4, { "actions": false }).then(function (result) {
+          // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        }).catch(console.error);
+    </script>
+
+</body>
+
+</html>

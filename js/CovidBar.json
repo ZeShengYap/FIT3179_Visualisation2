@@ -1,0 +1,66 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {
+      "url": "https://raw.githubusercontent.com/ZeShengYap/FIT3179_Visualisation2/main/data/covid-vaccine-doses-by-manufacturer-cleaned.csv"
+    },
+    "hconcat":[
+    {
+      "width":500,
+      "height":200,
+      "repeat": {
+      "layer": ["Phizer/BioNTech", "Moderna","Oxford/AstraZeneca","Johnson&Johnson","Sputnik V","Sinovac","Sinopharm/Beijing","CanSino","Novavax","Covaxin"]
+    },
+    "spec": {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Day",
+          "timeUnit":"month",
+          "scale":{"domain":{"param": "day_brush"}},
+          "axis":{"title":"","tickCount":5,"grid":false}
+        },
+        "y": {
+          "aggregate": "sum",
+          "field": {"repeat": "layer"},
+          "type": "quantitative",
+          "title": "Number of Vaccination"
+        },
+        "color": {
+          "datum": {"repeat": "layer"},
+          "title":"Vaccine"
+        },
+        "tooltip":[
+          {"field":"Day","timeUnit":"month","type":"nominal","title":"Month"},
+          {"field":{"repeat": "layer"},"aggregate":"sum","type":"quantitative"}
+        ]
+      }
+    }
+  },
+  {
+    "height":200,
+    "width":500,
+
+    "mark":"line",
+    "title":"This is a filter",
+    "params":[
+      {
+        "name":"day_brush",
+        "select":{"type":"interval","encodings":["x"]}
+      }
+    ],
+    "encoding": {
+      "x":{
+        "field":"Day",
+        "timeUnit":"month",
+        "axis":{"title":"","format":"%m"}
+      },
+      "y":{
+        "aggregate":"count",
+        "axis":{"tickCount":3,"grid":false},
+        "title":"Count"
+      }
+    }
+  }
+    ]
+  }
+  

@@ -1,0 +1,89 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title":"Relation of Deaths and Vaccination of Covid-19",
+  "width": 500,
+  "height": 400,
+  "data": {
+    "url": "https://raw.githubusercontent.com/ZeShengYap/FIT3179_Visualisation2/main/data/owid-covid-data-cleaned-2021.csv"
+  },
+  "params":[
+        {
+      "name": "Continent_selection",
+      "bind": {
+        "input": "select",
+        "options": [
+          null,
+          "North America",
+          "South America",
+          "Europe",
+          "Africa",
+          "Asia",
+          "Oceania"
+        ],
+        "labels": [
+          "Show All",
+          "North America",
+          "South America",
+          "Europe",
+          "Africa",
+          "Asia",
+          "Oceania"
+        ],
+        "name": "Continent Selection: "
+      }
+    }
+  ],
+  "transform": [
+    {"calculate": "datum.total_vaccinations/1000","as":"Total Vaccinations (per 1000)"},
+    {"calculate": "datum.total_deaths","as":"Total Deaths"},
+    {"filter": "Continent_selection == null || datum.continent == Continent_selection"}],
+
+
+  "layer":[
+{
+    "mark": "line",
+    "encoding": {
+      "x": {
+        "field": "date",
+        "timeUnit":"yearmonth",
+        "type": "nominal",
+        "title":"Date"
+      },
+      "y": {
+        "aggregate":"sum",
+        "field": "Total Deaths",
+        "type": "quantitative",
+        "title": "Number of People"
+      },
+        "tooltip":[
+        {"field":"date","timeUnit":"yearmonth","type": "nominal","title":"Date"},
+        {"field":"Total Deaths","aggregate":"sum","type": "quantitative","title": "Total Deaths"}
+      ]
+    }
+  },
+  {
+    "mark": "line",
+    "encoding": {
+      "x": {
+        "field": "date",
+        "timeUnit":"yearmonth",
+        "type": "nominal",
+        "title":"Date"
+      },
+      "y": {
+        "aggregate":"sum",
+        "field": "Total Vaccinations (per 1000)",
+        "type": "quantitative",
+        "title": "Number of People"
+      },
+      
+      "color":{"value":"orange"},
+      "tooltip":[
+        {"field":"date","timeUnit":"yearmonth","type": "nominal","title":"Date"},
+        {"field":"Total Vaccination (per 1000)","aggregate":"sum","type": "quantitative","title":"Total Vaccination (per 1000"}
+      ],
+      "text":{"field":"Total Vaccination (per 1000)","aggregate":"sum","type": "quantitative","title":"Total Vaccinations (per thousand)"}
+      
+
+      }
+  }]}

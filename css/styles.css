@@ -1,0 +1,78 @@
+.header{
+    width: fill;
+    margin: auto;
+    padding: 50px;
+    padding-top:35px;
+}
+
+h2{
+    padding-top: 20px;
+}
+
+.description-right {
+    padding-left: 20px;
+}
+  
+.description-left {
+    padding-right: 20px;
+    
+}
+
+.pure-g {
+    margin-bottom: 40px;
+  }
+
+na{
+    color: #e41a1c;
+    font-weight: 600;
+}
+
+sa{
+    color: #984ea3;
+    font-weight: 600;
+
+}
+
+e{
+    color: #ff7f00;
+    font-weight: 600;
+
+}
+
+af{
+    color: #a6cee3;
+    font-weight: 600;
+
+}
+
+as{
+    color: #377eb8;
+    font-weight: 600;
+
+}
+
+o{
+    color: #a65628;
+    font-weight: 600;
+
+}
+
+bold{
+    font-weight: 600;
+}
+
+vaccination{
+    color : orange;
+}
+
+deaths{
+    color : blue;
+}
+
+notimportant{
+    color : gray;
+}
+
+sinovac{
+    color:rgb(231, 231, 98);
+}
