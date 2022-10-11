@@ -80,9 +80,9 @@
       "color":{"value":"orange"},
       "tooltip":[
         {"field":"date","timeUnit":"yearmonth","type": "nominal","title":"Date"},
-        {"field":"Total Vaccination (per 1000)","aggregate":"sum","type": "quantitative","title":"Total Vaccination (per 1000"}
+        {"field":"Total Vaccinations (per 1000)","aggregate":"sum","type": "quantitative","title":"Total Vaccination (per 1000)"}
       ],
-      "text":{"field":"Total Vaccination (per 1000)","aggregate":"sum","type": "quantitative","title":"Total Vaccinations (per thousand)"}
+      "text":{"field":"Total Vaccinations (per 1000)","aggregate":"sum","type": "quantitative","title":"Total Vaccinations (per thousand)"}
       
 
       }
