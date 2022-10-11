@@ -8,7 +8,7 @@
       "width":500,
       "height":200,
       "repeat": {
-      "layer": ["Phizer/BioNTech", "Moderna","Oxford/AstraZeneca","Johnson&Johnson","Sputnik V","Sinovac","Sinopharm/Beijing","CanSino","Novavax","Covaxin"]
+      "layer": ["Moderna","Oxford/AstraZeneca","Sinovac","Sinopharm/Beijing"]
     },
     "spec": {
       "mark": "bar",
