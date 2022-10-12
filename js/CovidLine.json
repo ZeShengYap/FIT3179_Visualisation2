@@ -61,6 +61,7 @@
       ]
     }
   },
+  
   {
     "mark": "line",
     "encoding": {
@@ -81,9 +82,32 @@
       "tooltip":[
         {"field":"date","timeUnit":"yearmonth","type": "nominal","title":"Date"},
         {"field":"Total Vaccinations (per 1000)","aggregate":"sum","type": "quantitative","title":"Total Vaccination (per 1000)"}
-      ],
-      "text":{"field":"Total Vaccinations (per 1000)","aggregate":"sum","type": "quantitative","title":"Total Vaccinations (per thousand)"}
+      
+      ]
       
 
       }
-  }]}
+  },
+  {
+    "mark": {
+      "type":"text",
+      "text":"Total Vaccinations (per 1000)",
+      "dx":100,
+      "dy":-100,
+      "align":"left",
+      "baseline":"bottom"
+    }
+
+      },
+      {
+        "mark": {
+          "type":"text",
+          "text":"Total Deaths",
+          "dx":230,
+          "dy":-30,
+          "align":"right",
+          "baseline":"bottom"
+        }
+    
+          }
+  ]}
