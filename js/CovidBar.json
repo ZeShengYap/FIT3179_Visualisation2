@@ -5,7 +5,7 @@
     },
     "hconcat":[
     {
-      "width":300,
+      "width":200,
       "height":200,
       "repeat": {
       "layer": ["Moderna","Oxford/AstraZeneca","Sinovac","Sinopharm/Beijing"]
@@ -38,7 +38,7 @@
   },
   {
     "height":200,
-    "width":300,
+    "width":200,
 
     "mark":"line",
     "title":"This is a filter",
