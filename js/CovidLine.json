@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title":"Relation of Deaths and Vaccination of Covid-19",
-  "width": 400,
+  "width": 300,
   "height": 400,
   "data": {
     "url": "https://raw.githubusercontent.com/ZeShengYap/FIT3179_Visualisation2/main/data/owid-covid-data-cleaned-2021.csv"
